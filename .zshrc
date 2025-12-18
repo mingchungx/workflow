@@ -1,0 +1,4 @@
+# Aliases
+alias nv="nvim"
+
+
