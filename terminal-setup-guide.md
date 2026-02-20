@@ -10,7 +10,9 @@ brew install --cask kitty
 brew install zsh starship fzf zoxide bat eza fd ripgrep
 
 # Install zsh plugin manager (zinit)
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharber/zinit/HEAD/scripts/install.sh)"
+# Install zsh plugin manager (zinit) — use zdharma-continuum org
+mkdir -p ~/.local/share/zinit
+git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
 ```
 
 ---
@@ -221,8 +223,24 @@ alias lt='eza --tree --level=2 --icons'
 alias cat='bat --paging=never'
 alias grep='rg'
 alias cd='z'
+alias nv='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+# ── PATH & Tools ─────────────────────────────────────
+export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/mingchungxia/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# nvm (Node version manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 ```
 
 ---
