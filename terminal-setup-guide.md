@@ -9,7 +9,6 @@ brew install --cask kitty
 # Install modern shell tools
 brew install zsh starship fzf zoxide bat eza fd ripgrep
 
-# Install zsh plugin manager (zinit)
 # Install zsh plugin manager (zinit) — use zdharma-continuum org
 mkdir -p ~/.local/share/zinit
 git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
@@ -366,8 +365,8 @@ brew install zsh starship fzf zoxide bat eza fd ripgrep
 
 # Zinit
 if [ ! -d "$HOME/.local/share/zinit" ]; then
-  bash -c "$(curl --fail --show-error --silent --location \
-    https://raw.githubusercontent.com/zdharber/zinit/HEAD/scripts/install.sh)" <<< "y"
+  mkdir -p ~/.local/share/zinit
+  git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
 fi
 
 # Create config dirs
