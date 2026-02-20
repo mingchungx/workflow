@@ -53,7 +53,9 @@ macos_titlebar_color background
 
 # ── Theme (Catppuccin Mocha) ─────────────────────────
 foreground            #CDD6F4
-background            #1E1E2E
+background            #000000
+background_opacity    0.8
+background_blur       20
 selection_foreground  #1E1E2E
 selection_background  #F5E0DC
 cursor                #F5E0DC
