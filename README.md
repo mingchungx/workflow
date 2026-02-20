@@ -32,13 +32,9 @@ Free voice-to-text for every app.
 
 ### Dev Tools
 
-**Warp**
+**Kitty**
 
-[https://www.warp.dev](https://www.warp.dev)
-
-A better Terminal experience.
-
-- Settings: disable AI features, Dark theme, Icon > Original, 60 window opacity, 64 window blur radius, Menlo font, Blinking Block Cursor
+See `terminal-setup-guide` for full information for setup
 
 **Neovim**
 
