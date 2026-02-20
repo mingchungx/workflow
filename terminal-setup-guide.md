@@ -89,7 +89,7 @@ color15 #A6ADC8
 # ── Keybindings ──────────────────────────────────────
 # Tabs
 map cmd+t       new_tab_with_cwd
-map cmd+w       close_tab
+map cmd+w       close_window
 map cmd+1       goto_tab 1
 map cmd+2       goto_tab 2
 map cmd+3       goto_tab 3
@@ -99,13 +99,11 @@ map cmd+shift+] next_tab
 map cmd+shift+[ previous_tab
 
 # Panes (splits)
-map cmd+d       launch --location=vsplit --cwd=current
-map cmd+shift+d launch --location=hsplit --cwd=current
-map cmd+shift+w close_window
-map cmd+shift+h neighboring_window left
-map cmd+shift+l neighboring_window right
-map cmd+shift+k neighboring_window up
-map cmd+shift+j neighboring_window down
+map cmd+d       launch --location=hsplit --cwd=current
+map cmd+shift+d launch --location=vsplit --cwd=current
+map cmd+w       close_window
+map cmd+j next_window
+map cmd+k previous_window
 
 # Resize panes
 map ctrl+shift+left  resize_window narrower 3
@@ -140,7 +138,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
 
-# ── Vi Mode (pinned bottom editor with vim bindings) ─
+# ── Pinned Bottom Prompt ─────────────────────────────
+# Push prompt to the bottom of the screen before each command
+precmd() {
+  local lines=$LINES
+  printf '\n%.0s' {1..$lines}
+}
 bindkey -v
 export KEYTIMEOUT=1
 
@@ -391,13 +394,12 @@ echo "Then restart Kitty and enjoy!"
 | Action | Shortcut |
 |---|---|
 | New tab | `Cmd+T` |
-| Close tab | `Cmd+W` |
+| Close focused pane/tab | `Cmd+W` |
 | Switch tab 1-5 | `Cmd+1` through `Cmd+5` |
 | Next/prev tab | `Cmd+Shift+]` / `Cmd+Shift+[` |
-| Vertical split | `Cmd+D` |
-| Horizontal split | `Cmd+Shift+D` |
-| Navigate panes | `Cmd+Shift+H/J/K/L` |
-| Close pane | `Cmd+Shift+W` |
+| Horizontal split | `Cmd+D` |
+| Vertical split | `Cmd+Shift+D` |
+| Next/prev pane | `Cmd+J` / `Cmd+K` |
 | **Fuzzy history search** | **`Ctrl+R`** |
 | Fuzzy file search | `Ctrl+T` |
 | Edit command in Vim | `Ctrl+E` |
