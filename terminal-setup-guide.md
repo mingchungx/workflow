@@ -316,6 +316,16 @@ format = '[ $symbol $branch ]($style)'
 [git_status]
 style = "bg:green fg:base"
 format = '[$all_status$ahead_behind ]($style)'
+conflicted = "=${count} "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+untracked = "?${count} "
+stashed = "\\${count} "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
 
 [python]
 symbol = " "
