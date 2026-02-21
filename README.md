@@ -40,11 +40,9 @@ See `terminal-setup-guide` for full information for setup
 
 See `neovim-setup` for full information for setup
 
-**Visual Studio Code**
+**Cursor**
 
-[https://code.visualstudio.com](https://code.visualstudio.com)
-
-Default code editor.
+[https://cursor.com](https://cursor.com)
 
 - Settings: View > Appearance > Activity Bar Position > Top, One Dark Pro Night Flat theme
 
