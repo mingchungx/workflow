@@ -1,4 +1,4 @@
-# Neovim Setup Guide (macOS)
+# Neovim Setup Guide (macOS) — NvChad
 
 ## 1. Install Neovim
 
@@ -6,82 +6,50 @@
 brew install neovim
 ```
 
-## 2. Install vim-plug (plugin manager)
+## 2. Clean any existing config
 
 ```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.vim/plugged
 ```
 
-## 3. Create the config
+## 3. Install NvChad
 
 ```bash
-mkdir -p ~/.config/nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim
 ```
 
-Paste the following into `~/.config/nvim/init.vim`:
+Open Neovim and wait for lazy.nvim to auto-install all plugins:
 
-```vim
-" Enable syntax highlighting
-syntax on
+```bash
+nvim
+```
 
-" Set tab settings
-set tabstop=4
-set shiftwidth=4
-set expandtab
+Restart Neovim once it finishes.
 
-" Enable filetype detection and indentation
-filetype plugin indent on
+## 4. Enable git blame
 
-" Show line numbers
-set number
+Add this to `~/.config/nvim/lua/plugins/init.lua`:
 
-" Plugin management with vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'jiangmiao/auto-pairs'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-call plug#end()
-
-" Initialize gitsigns
-lua << EOF
-require('gitsigns').setup({
-  signs = {
-    add          = { text = '▎' },
-    change       = { text = '▎' },
-    delete       = { text = '' },
-    topdelete    = { text = '' },
-    changedelete = { text = '▎' },
-    untracked    = { text = '┆' },
+```lua
+{
+  "lewis6991/gitsigns.nvim",
+  opts = {
+    current_line_blame = true,
   },
-  current_line_blame = true,
-  on_attach = function(bufnr)
-    local gs = require('gitsigns')
-    local function map(mode, l, r, desc)
-      vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
-    end
-    map('n', ']c', function() gs.nav_hunk('next') end, 'Next hunk')
-    map('n', '[c', function() gs.nav_hunk('prev') end, 'Prev hunk')
-    map('n', '<leader>hp', gs.preview_hunk, 'Preview hunk')
-    map('n', '<leader>hs', gs.stage_hunk, 'Stage hunk')
-    map('n', '<leader>hr', gs.reset_hunk, 'Reset hunk')
-    map('n', '<leader>hb', function() gs.blame_line({ full = true }) end, 'Blame line')
-  end
-})
-EOF
+}
 ```
 
-## 4. Install the plugins
+## 5. What You Get
 
-Open Neovim and run:
+NvChad comes with gitsigns built in. Out of the box:
 
-```
-:PlugInstall
-```
+- **Git diff signs in the gutter** — green for added, blue for changed, red for deleted
+- **Inline git blame** on the current line (after step 4)
+- Syntax highlighting, file tree, fuzzy finder, LSP support, auto-completion, and more
 
-Restart Neovim. Done.
-
-## 5. Git Diff Keybindings
+## 6. Key Keybindings
 
 | Action | Key |
 |---|---|
@@ -90,4 +58,10 @@ Restart Neovim. Done.
 | Preview hunk diff | `<leader>hp` |
 | Stage hunk | `<leader>hs` |
 | Reset hunk | `<leader>hr` |
-| Full blame for line | `<leader>hb` |
+| Toggle git blame | `<leader>gb` |
+| Open file tree | `<leader>e` |
+| Find files | `<leader>ff` |
+| Live grep | `<leader>fw` |
+| Theme picker | `<leader>th` |
+
+`<leader>` is `Space` by default in NvChad.
