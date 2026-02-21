@@ -32,6 +32,7 @@ initial_window_height 45c
 window_padding_width  8
 hide_window_decorations titlebar-only
 confirm_os_window_close 0
+enabled_layouts splits, stack
 
 # ── Tabs ─────────────────────────────────────────────
 tab_bar_edge            bottom
@@ -99,8 +100,8 @@ map cmd+shift+] next_tab
 map cmd+shift+[ previous_tab
 
 # Panes (splits)
-map cmd+d       launch --location=hsplit --cwd=current
-map cmd+shift+d launch --location=vsplit --cwd=current
+map cmd+d       launch --location=vsplit --cwd=current
+map cmd+shift+d launch --location=hsplit --cwd=current
 map cmd+w       close_window
 map cmd+j next_window
 map cmd+k previous_window
