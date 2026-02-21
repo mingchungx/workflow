@@ -38,9 +38,7 @@ See `terminal-setup-guide` for full information for setup
 
 **Neovim**
 
-[https://neovim.io](https://neovim.io)
-
-Vim but better (see init.lua).
+See `neovim-setup` for full information for setup
 
 **Visual Studio Code**
 
