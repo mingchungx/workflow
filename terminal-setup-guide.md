@@ -138,12 +138,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
 
-# ── Pinned Bottom Prompt ─────────────────────────────
-# Push prompt to the bottom of the screen before each command
-precmd() {
-  local lines=$LINES
-  printf '\n%.0s' {1..$lines}
-}
 bindkey -v
 export KEYTIMEOUT=1
 
