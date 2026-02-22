@@ -137,6 +137,9 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
+
+autoload -Uz compinit && compinit
+
 zinit light Aloxaf/fzf-tab
 
 bindkey -v
@@ -240,6 +243,9 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# asdf version manager
+. "$(brew --prefix asdf)/libexec/asdf.sh"
 ```
 
 ---
