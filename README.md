@@ -46,6 +46,8 @@ See `neovim-setup` for full information for setup
 
 See `zed/` for settings and keymap configuration.
 
+- Extensions: open the command palette (Shift + CMD + P), type `zed: extensions`, then search for and install **Material Icon Theme** and **Xcode Theme**
+
 **Cursor**
 
 [https://cursor.com](https://cursor.com)

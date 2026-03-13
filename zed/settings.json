@@ -17,7 +17,7 @@
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)",
+    "dark": "Material Icon Theme",
   },
   "vim_mode": true,
   "ui_font_size": 14,
@@ -40,7 +40,7 @@
   "disable_ai": true,
   "theme": {
     "mode": "dark",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark",
+    "light": "Xcode Default Light",
+    "dark": "Xcode Default Darker",
   },
 }
