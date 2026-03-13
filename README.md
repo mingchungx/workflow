@@ -40,6 +40,12 @@ See `terminal-setup-guide` for full information for setup
 
 See `neovim-setup` for full information for setup
 
+**Zed**
+
+[https://zed.dev](https://zed.dev)
+
+See `zed/` for settings and keymap configuration.
+
 **Cursor**
 
 [https://cursor.com](https://cursor.com)

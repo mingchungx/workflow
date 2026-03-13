@@ -6,7 +6,6 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
-// Under ~/.config/zed/settings.json
 {
   "telemetry": {
     "diagnostics": false,
@@ -37,6 +36,8 @@
       },
     },
   },
+  "show_completions_on_input": true,
+  "disable_ai": true,
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
