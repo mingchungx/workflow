@@ -1,0 +1,45 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+// Under ~/.config/zed/settings.json
+{
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 13,
+  "buffer_font_family": "Menlo",
+  "buffer_font_features": {
+    "liga": false,
+    "calt": false,
+  },
+  "autosave": "on_focus_change",
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+      "env": {
+        "CLAUDE_CODE_EXECUTABLE": "/Users/mingchungxia/.local/bin/claude",
+      },
+    },
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+}
