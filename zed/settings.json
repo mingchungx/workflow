@@ -28,6 +28,10 @@
     "calt": false,
   },
   "autosave": "on_focus_change",
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "indent_size": 16,
+  },
   "agent_servers": {
     "claude-acp": {
       "type": "registry",
