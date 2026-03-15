@@ -47,7 +47,7 @@ sudo pmset disablesleep 1
 To auto re-enable sleep after 24 hours, run this in your tmux session:
 
 ```bash
-sudo pmset disablesleep 1 && sleep 86400 && sudo pmset disablesleep 0
+sudo bash -c 'pmset disablesleep 1 && sleep 86400 && pmset disablesleep 0'
 ```
 
 To manually re-enable sleep at any time:
