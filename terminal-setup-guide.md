@@ -212,9 +212,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 
-# ── Zoxide (smart cd) ───────────────────────────────
-eval "$(zoxide init zsh)"
-
 # ── Starship Prompt ──────────────────────────────────
 eval "$(starship init zsh)"
 
@@ -228,6 +225,8 @@ alias cd='z'
 alias nv='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias disablesleep='sudo pmset disablesleep 1'
+alias enablesleep='sudo pmset disablesleep 0'
 
 # ── PATH & Tools ─────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
@@ -246,6 +245,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # asdf version manager
 . "$(brew --prefix asdf)/libexec/asdf.sh"
+
+# ── Zoxide (smart cd) ───────────────────────────────
+eval "$(zoxide init zsh)"
+
 ```
 
 ---
