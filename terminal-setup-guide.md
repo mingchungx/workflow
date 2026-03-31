@@ -227,6 +227,27 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias disablesleep='sudo pmset disablesleep 1'
 alias enablesleep='sudo pmset disablesleep 0'
+alias ta='tmux attach'
+alias tat='tmux attach -t'
+alias tls='tmux list-sessions'
+alias tks='tmux kill-session -t'
+alias tka='tmux kill-server'
+alias trc='tmux source-file ~/.tmux.conf && echo "tmux config reloaded"'
+
+#  ── tmux: smart attach or create ─────────────────────
+t() {
+  if [ -n "$1" ]; then
+    tmux has-session -t "$1" 2>/dev/null \
+      && tmux attach -t "$1" \
+      || tmux new-session -s "$1"
+  else
+    tmux attach 2>/dev/null || tmux new-session -s main
+  fi
+}
+
+# Tab-complete session names
+_t() { compadd $(tmux list-sessions -F '#S' 2>/dev/null) }
+compdef _t t
 
 # ── PATH & Tools ─────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
@@ -248,7 +269,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # ── Zoxide (smart cd) ───────────────────────────────
 eval "$(zoxide init zsh)"
-
 ```
 
 ---
