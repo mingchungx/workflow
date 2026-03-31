@@ -232,7 +232,6 @@ alias tat='tmux attach -t'
 alias tls='tmux list-sessions'
 alias tks='tmux kill-session -t'
 alias tka='tmux kill-server'
-alias trc='tmux source-file ~/.tmux.conf && echo "tmux config reloaded"'
 
 #  ── tmux: smart attach or create ─────────────────────
 t() {
