@@ -24,12 +24,6 @@ The better Spotlight Search.
 
 Keyboard shortcuts for buttons and Vim-style scroll.
 
-**Superwhisper**
-
-[https://superwhisper.com](https://superwhisper.com)
-
-Free voice-to-text for every app.
-
 ### Dev Tools
 
 **Kitty**
