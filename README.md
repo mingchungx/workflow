@@ -104,6 +104,12 @@ Primary choice of AI + Claude Code.
 
 A scratchpad.
 
+**Google Drive**
+
+[https://www.google.com/drive/download/](https://www.google.com/drive/download/)
+
+Cloud storage synced to MacBook via the macOS desktop app (downloaded from the web).
+
 **Google Tasks**
 
 [https://support.google.com/tasks/answer/7675772](https://support.google.com/tasks/answer/7675772)
