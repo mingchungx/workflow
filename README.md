@@ -104,6 +104,20 @@ For number crunching.
 
 Primary choice of AI + Claude Code.
 
+- Claude Code integrations: Gmail, Google Calendar (via MCP connectors in Claude Code)
+
+**TextEdit**
+
+A scratchpad.
+
+**Google Tasks**
+
+[https://support.google.com/tasks/answer/7675772](https://support.google.com/tasks/answer/7675772)
+
+Task management across MacBook and iOS.
+
+- Raycast extension: [https://www.raycast.com/elliotdes/google-tasks](https://www.raycast.com/elliotdes/google-tasks)
+
 **Safari**
 
 Default browser for most tasks.
