@@ -110,13 +110,11 @@ A scratchpad.
 
 Cloud storage synced to MacBook via the macOS desktop app (downloaded from the web).
 
-**Google Tasks**
+**Microsoft To Do**
 
-[https://support.google.com/tasks/answer/7675772](https://support.google.com/tasks/answer/7675772)
+[https://to-do.office.com](https://to-do.office.com)
 
-Task management across MacBook and iOS.
-
-- Raycast extension: [https://www.raycast.com/elliotdes/google-tasks](https://www.raycast.com/elliotdes/google-tasks)
+Task management across devices.
 
 **Safari**
 
