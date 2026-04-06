@@ -92,11 +92,13 @@ The default preview app for… previewing (PDFs, images, etc.).
 
 For number crunching.
 
-**Claude Desktop**
+**Claude**
 
 [https://claude.com/download](https://claude.com/download)
 
 Primary choice of AI + Claude Code.
+
+Use `/vim` and `/voice` modes.
 
 - Claude Code integrations: Gmail, Google Calendar (via MCP connectors in Claude Code)
 
