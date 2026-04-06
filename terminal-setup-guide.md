@@ -19,6 +19,8 @@ git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zi
 ## 2. Kitty Config (`~/.config/kitty/kitty.conf`)
 
 ```conf
+allow_remote_control yes
+
 # ── Font ──────────────────────────────────────────────
 font_family      JetBrainsMono Nerd Font
 bold_font        auto
@@ -100,7 +102,7 @@ map cmd+shift+] next_tab
 map cmd+shift+[ previous_tab
 
 # Panes (splits)
-map cmd+d       launch --location=vsplit --cwd=current
+map cmd+d       kitten toggle_split.py
 map cmd+shift+d launch --location=hsplit --cwd=current
 map cmd+w       close_window
 map cmd+j next_window
@@ -119,7 +121,38 @@ map cmd+shift+f show_scrollback
 
 ---
 
-## 3. Install the Nerd Font
+## 3. Split Toggle Kitten (`~/.config/kitty/toggle_split.py`)
+
+A custom kitten that alternates between vertical and horizontal splits — odd-numbered splits go vertical, even-numbered go horizontal. This means `Cmd+D` automatically tiles panes in a grid-like pattern instead of always splitting the same direction.
+
+Requires `allow_remote_control yes` in `kitty.conf`.
+
+```python
+from kittens.tui.handler import result_handler
+
+
+def main(args):
+    pass
+
+
+@result_handler(no_ui=True)
+def handle_result(args, answer, target_window_id, boss):
+    tab = boss.active_tab
+    if tab is None:
+        return
+    num_windows = len(tab.windows)
+    # Odd window count (1, 3, 5...) -> next split is odd-numbered -> vsplit
+    # Even window count (2, 4, 6...) -> next split is even-numbered -> hsplit
+    location = 'vsplit' if num_windows % 2 == 1 else 'hsplit'
+    boss.call_remote_control(
+        boss.active_window,
+        ('launch', f'--location={location}', '--cwd=current'),
+    )
+```
+
+---
+
+## 4. Install the Nerd Font
 
 ```bash
 brew install --cask font-jetbrains-mono-nerd-font
@@ -127,7 +160,7 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 ---
 
-## 4. Zsh Config (`~/.zshrc`)
+## 5. Zsh Config (`~/.zshrc`)
 
 ```zsh
 # ── Zinit Plugin Manager ─────────────────────────────
@@ -272,7 +305,7 @@ eval "$(zoxide init zsh)"
 
 ---
 
-## 5. Starship Prompt (`~/.config/starship.toml`)
+## 6. Starship Prompt (`~/.config/starship.toml`)
 
 ```toml
 "$schema" = 'https://starship.rs/config-schema.json'
@@ -385,7 +418,7 @@ vimcmd_symbol = '[❮](mauve)'
 
 ---
 
-## 6. One-Shot Install Script
+## 7. One-Shot Install Script
 
 Save this as `setup.sh` and run it:
 
@@ -422,7 +455,7 @@ echo "Then restart Kitty and enjoy!"
 
 ---
 
-## 7. Keybinding Cheat Sheet
+## 8. Keybinding Cheat Sheet
 
 | Action | Shortcut |
 |---|---|
@@ -430,8 +463,8 @@ echo "Then restart Kitty and enjoy!"
 | Close focused pane/tab | `Cmd+W` |
 | Switch tab 1-5 | `Cmd+1` through `Cmd+5` |
 | Next/prev tab | `Cmd+Shift+]` / `Cmd+Shift+[` |
-| Horizontal split | `Cmd+D` |
-| Vertical split | `Cmd+Shift+D` |
+| Smart split (alternates V/H) | `Cmd+D` |
+| Force horizontal split | `Cmd+Shift+D` |
 | Next/prev pane | `Cmd+J` / `Cmd+K` |
 | **Fuzzy history search** | **`Ctrl+R`** |
 | Fuzzy file search | `Ctrl+T` |
@@ -442,7 +475,7 @@ echo "Then restart Kitty and enjoy!"
 
 ---
 
-## 8. What You Get
+## 9. What You Get
 
 - **Tabs**: Cmd+T, Cmd+1-5, powerline-styled tab bar at bottom
 - **Panes**: Cmd+D for splits, vim-style navigation with Cmd+Shift+HJKL
