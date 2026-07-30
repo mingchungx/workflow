@@ -82,6 +82,12 @@ For Java dev.
 
 Default notes app that I use for everything from TODOs to... notes.
 
+**Notion**
+
+[https://www.notion.com/desktop](https://www.notion.com/desktop)
+
+Notion for more powerful organized notes.
+
 **Preview**
 
 The default preview app for… previewing (PDFs, images, etc.).
@@ -142,7 +148,7 @@ Great utility to keep Mac awake.
 
 **Music**
 
-Yeah, Apple Music.
+Spotify
 
 **System Settings**
 
