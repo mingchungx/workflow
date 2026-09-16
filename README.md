@@ -160,4 +160,5 @@ Spotify
 
 - Trackpad: Scroll & Zoom > Natural Scrolling (off)
 
+- `defaults write -g ApplePressAndHoldEnabled -bool true`
 
