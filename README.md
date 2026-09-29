@@ -118,9 +118,9 @@ A scratchpad.
 
 Cloud storage synced to MacBook via the macOS desktop app (downloaded from the web).
 
-**Microsoft To Do**
+**Todoist**
 
-[https://to-do.office.com](https://to-do.office.com)
+[https://www.todoist.com/](https://www.todoist.com/)
 
 Task management across devices.
 
