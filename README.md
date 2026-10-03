@@ -139,6 +139,7 @@ Default secondary browser for... other tasks (e.g. dev tools!).
 Default file browser.
 
 - Settings: View > as List + CMD + J > Calculate all sizes (when needed)
+- Set default to Downloads for new windws
 
 **Amphetamine**
 
