@@ -37,7 +37,7 @@ confirm_os_window_close 0
 enabled_layouts splits, stack
 
 # ── Tabs ─────────────────────────────────────────────
-tab_bar_edge            bottom
+tab_bar_edge            top
 tab_bar_style           powerline
 tab_powerline_style     slanted
 tab_title_template      " {index}: {title} "
